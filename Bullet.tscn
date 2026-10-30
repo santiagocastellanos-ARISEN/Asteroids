@@ -9,6 +9,8 @@ radius = 9.0
 [node name="Bullet" type="RigidBody2D" unique_id=844096615]
 modulate = Color(1.540184e-06, 0.42178553, 0.48360276, 1)
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_4s4u5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094469364]

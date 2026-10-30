@@ -1,21 +1,20 @@
-extends Node2D
+class_name GameManager extends Node2D
+
+static var score : int = 0
 
 #Awake
 func _init() -> void:
+	print_debug("Game Started")
+	score = 0
 	pass
 
 # Start
 func _ready() -> void:
-	print_debug("Game Started")
+	pass
 
 # Update
 func _process(delta: float) -> void:
-		if(Input.is_action_just_pressed("Shoot")) : print_debug("Shooted")
-		if(Input.is_action_pressed("UP")) : print_debug("Going Up")
-		if(Input.is_action_pressed("Down")) : print_debug("Going Down")
-		if(Input.is_action_pressed("Left")) : print_debug("Going Left")
-		if(Input.is_action_pressed("Right")) : print_debug("Going Right")
-		pass
+	pass
 	
 	# Fixed_update
 func _physics_process(delta: float) -> void:

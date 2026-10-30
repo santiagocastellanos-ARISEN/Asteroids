@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0ivboqi5d4ma" path="res://main_scene.gd" id="1_8sucx"]
 [ext_resource type="PackedScene" uid="uid://f2fquuoffj" path="res://Ship.tscn" id="2_tkmsp"]
 [ext_resource type="PackedScene" uid="uid://wix7hdexdxsb" path="res://Asteroid.tscn" id="3_tkmsp"]
+[ext_resource type="Script" uid="uid://ybqcg2qipin1" path="res://UpdateUI.gd" id="4_5yw3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xefov"]
 size = Vector2(18, 639)
@@ -45,3 +46,14 @@ shape = SubResource("RectangleShape2D_tve2t")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1890173236]
 position = Vector2(826, -25)
 shape = SubResource("RectangleShape2D_36c0m")
+
+[node name="UI" type="Node" parent="." unique_id=1813548630 node_paths=PackedStringArray("ScoreDisplay")]
+script = ExtResource("4_5yw3w")
+ScoreDisplay = NodePath("ScoreDisplay")
+
+[node name="ScoreDisplay" type="TextEdit" parent="UI" unique_id=548353089]
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 150.0
+offset_bottom = 53.0
+text = "Score:"
