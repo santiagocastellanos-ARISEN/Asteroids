@@ -7,6 +7,7 @@
 radius = 82.1523
 
 [node name="Asteroid" type="RigidBody2D" unique_id=2043537414]
+mass = 306.258
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
