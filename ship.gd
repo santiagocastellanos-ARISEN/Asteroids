@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 func _take_dmg() -> void:
 	if iFrames > 0: return
 	
-	hitPoints = -1
+	hitPoints -= 1
 	print_debug("Damage")
 	global_position = initPos
 	iFrames = 10
@@ -43,7 +43,7 @@ func _take_dmg() -> void:
 		queue_free() #Destroys the Object
 		pass
 		
-	global_position = initPos
+	teleport(initPos)
 	linear_velocity = Vector2.ZERO
 	iFrames = 10
 
@@ -55,4 +55,12 @@ func _shoot() -> void:
 	get_parent().add_child(bulletObj)
 	bulletObj.global_position = pivot.global_position
 	bulletObj.linear_velocity = Vector2.UP * 1000
+	pass
+	
+func teleport(pos : Vector2) -> void:
+	PhysicsServer2D.body_set_state(
+		get_rid(),
+		PhysicsServer2D.BODY_STATE_TRANSFORM,
+		Transform2D.IDENTITY.translated(pos)
+	)
 	pass
