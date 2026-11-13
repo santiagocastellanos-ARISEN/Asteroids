@@ -1,21 +1,8 @@
 class_name Bullet extends RigidBody2D
 
-var life_time : float = 1.5
-
-func _ready() -> void:
-	body_entered.connect(dmg_asteroid)
+func on_physics_process(delta:float) -> void:
 	pass
 	
-func _physics_process(delta: float) -> void:
-	life_time -= delta
-	if life_time <= 0 : queue_free()
-	pass
-
-func dmg_asteroid(other: RigidBody2D) -> void:
-	if !(other is A_Asteroid): return
-	(other as A_Asteroid).take_dmg()
+func on_asteroid_collision(asteroid : A_Asteroid):
 	queue_free()
 	pass
-	
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()

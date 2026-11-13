@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdktfsss1678j" path="res://ship.gd" id="1_oam5h"]
 [ext_resource type="Texture2D" uid="uid://o80r7myylfb1" path="res://icon.svg" id="1_xljvd"]
-[ext_resource type="PackedScene" uid="uid://dkkphykx5se2c" path="res://Bullet.tscn" id="2_ix3uc"]
+[ext_resource type="PackedScene" uid="uid://6ijq1o26jl0t" path="res://Piercing Bullet.tscn" id="2_oam5h"]
 
 [node name="Ship" type="RigidBody2D" unique_id=170602199 node_paths=PackedStringArray("pivot")]
 position = Vector2(1, 1)
@@ -11,7 +11,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_oam5h")
 speed = 575.0
-bullet = ExtResource("2_ix3uc")
+bullet = ExtResource("2_oam5h")
 pivot = NodePath("Pivot")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1540537250]

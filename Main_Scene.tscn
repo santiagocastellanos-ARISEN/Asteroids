@@ -22,7 +22,7 @@ size = Vector2(18, 630)
 script = ExtResource("1_8sucx")
 
 [node name="Ship" parent="." unique_id=170602199 instance=ExtResource("2_tkmsp")]
-position = Vector2(405, 286)
+position = Vector2(373, 326)
 collision_mask = 5
 
 [node name="Asteroid" parent="." unique_id=2043537414 instance=ExtResource("3_tkmsp")]
