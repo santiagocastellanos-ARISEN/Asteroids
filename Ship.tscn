@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdktfsss1678j" path="res://ship.gd" id="1_oam5h"]
 [ext_resource type="Texture2D" uid="uid://o80r7myylfb1" path="res://icon.svg" id="1_xljvd"]
-[ext_resource type="PackedScene" uid="uid://6ijq1o26jl0t" path="res://Piercing Bullet.tscn" id="2_oam5h"]
+[ext_resource type="PackedScene" uid="uid://6ijq1o26jl0t" path="res://Bullets/Piercing Bullet.tscn" id="2_oam5h"]
 
 [node name="Ship" type="RigidBody2D" unique_id=170602199 node_paths=PackedStringArray("pivot")]
 position = Vector2(1, 1)

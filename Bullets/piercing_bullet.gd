@@ -5,7 +5,6 @@ class_name PiercingBullet extends ABullet
 func on_physics_process(delta: float) -> void:
 	pass
 	
-	
 func on_asteroid_collision(asteroid : A_Asteroid):
 	piercing -= 1
 	var dir_change = (global_position - asteroid.global_position).normalized()

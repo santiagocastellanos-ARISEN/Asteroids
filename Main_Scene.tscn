@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c0ivboqi5d4ma" path="res://main_scene.gd" id="1_8sucx"]
 [ext_resource type="PackedScene" uid="uid://f2fquuoffj" path="res://Ship.tscn" id="2_tkmsp"]
-[ext_resource type="PackedScene" uid="uid://wix7hdexdxsb" path="res://Asteroid.tscn" id="3_tkmsp"]
+[ext_resource type="PackedScene" uid="uid://wix7hdexdxsb" path="res://Asteroids/Asteroid.tscn" id="3_tkmsp"]
 [ext_resource type="Script" uid="uid://ybqcg2qipin1" path="res://UpdateUI.gd" id="4_5yw3w"]
 [ext_resource type="Script" uid="uid://c5xhy6s5mwsrc" path="res://Hard_Asteroid.gd" id="4_qtktj"]
+[ext_resource type="PackedScene" uid="uid://dvrbn3nq84w3v" path="res://Power/Power Up.tscn" id="6_654x7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xefov"]
 size = Vector2(18, 639)
@@ -63,3 +64,12 @@ offset_top = 22.0
 offset_right = 150.0
 offset_bottom = 53.0
 text = "Score:"
+
+[node name="PowerUp" parent="." unique_id=369952291 instance=ExtResource("6_654x7")]
+position = Vector2(464, 228)
+
+[node name="PowerUp2" parent="." unique_id=1678752084 instance=ExtResource("6_654x7")]
+position = Vector2(460, 258)
+
+[node name="PowerUp3" parent="." unique_id=1537462223 instance=ExtResource("6_654x7")]
+position = Vector2(461, 288)

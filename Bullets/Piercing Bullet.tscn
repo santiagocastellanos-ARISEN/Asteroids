@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6ijq1o26jl0t"]
 
-[ext_resource type="Script" uid="uid://c1new08fboh2q" path="res://piercing_bullet.gd" id="1_cm58g"]
-[ext_resource type="Texture2D" uid="uid://o80r7myylfb1" path="res://icon.svg" id="2_n0voy"]
+[ext_resource type="Script" uid="uid://c1new08fboh2q" path="res://Bullets/piercing_bullet.gd" id="1_wq8c5"]
+[ext_resource type="Texture2D" uid="uid://o80r7myylfb1" path="res://icon.svg" id="2_tyxbn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjdqc"]
 radius = 9.0
@@ -12,13 +12,13 @@ mass = 100000000.0
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_cm58g")
+script = ExtResource("1_wq8c5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094469364]
 shape = SubResource("CircleShape2D_cjdqc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1911199560]
 scale = Vector2(0.10546874, 0.08593751)
-texture = ExtResource("2_n0voy")
+texture = ExtResource("2_tyxbn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=808888129]
