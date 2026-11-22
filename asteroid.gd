@@ -1,45 +1,38 @@
 class_name NormalAsteroid extends A_Asteroid
 
-enum Size
-{
-	Big, Medium, Small
+enum Size { Big, Medium, Small }
+
+const SCALE_BY_SIZE : Dictionary = {
+	Size.Big: 1.0,
+	Size.Medium: 0.5,
+	Size.Small: 0.3,
 }
 
 @export var size : Size = Size.Big
 
-func _validate_size() -> void:
-	var set_scale = 0
-	
-	if size == Size.Big: set_scale = 1
-	if size == Size.Medium: set_scale = 0.5
-	else: set_scale = 0.3
-	
+func _set_size(new_size : Size) -> void:
+	var factor : float = SCALE_BY_SIZE[new_size] / SCALE_BY_SIZE[size]
+	size = new_size
 	for child in get_children():
-		(child as Node2D).global_scale *= set_scale
-	pass
+		if child is Node2D:
+			(child as Node2D).scale *= factor
 
-func on_dmg_tkn() -> void: 
-	if size == Size.Small: 
-		queue_free() #Destroys the Object
+func on_dmg_tkn() -> void:
+	if size == Size.Small:
+		queue_free()
 		return
-				
-	var newAsteroid1 = duplicate() as NormalAsteroid
-	var newAsteroid2 = duplicate() as NormalAsteroid
-	get_parent().add_child(newAsteroid1)
-	get_parent().add_child(newAsteroid2)
-	
-	var newSize = Size.Medium
-	if size == Size.Medium: newSize = Size.Small
-	
-	newAsteroid1.size = newSize
-	newAsteroid2.size = newSize
-	
-	newAsteroid1._validate_size()
-	newAsteroid2._validate_size()
-	
-	newAsteroid1.global_position = global_position + Vector2.RIGHT
-	newAsteroid2.global_position = global_position + Vector2.LEFT
 
-	queue_free() #Destroys the object
-	pass
-	
+	var new_size : Size = Size.Medium if size == Size.Big else Size.Small
+
+	var a1 := duplicate() as NormalAsteroid
+	var a2 := duplicate() as NormalAsteroid
+	get_parent().add_child(a1)
+	get_parent().add_child(a2)
+
+	a1._set_size(new_size)
+	a2._set_size(new_size)
+
+	a1.global_position = global_position + Vector2.RIGHT * 10
+	a2.global_position = global_position + Vector2.LEFT * 10
+
+	queue_free()
